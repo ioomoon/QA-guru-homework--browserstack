@@ -1,1 +1,1 @@
-##Примеры UI автотестов для Android приложения Wikipedia
+## Примеры UI автотестов для Android приложения Wikipedia
