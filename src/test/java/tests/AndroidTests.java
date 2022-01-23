@@ -27,7 +27,7 @@ public class AndroidTests extends TestBase {
         steps.assertResultsExist();
     }
 
-    @DisplayName("Тест на проверку языка")
+    @DisplayName("Тест на проверку языка поиска")
     @Test
     void checkLanguage() throws MalformedURLException, InterruptedException {
         steps.searchWikiClick();
