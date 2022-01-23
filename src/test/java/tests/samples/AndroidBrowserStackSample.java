@@ -1,8 +1,10 @@
 package tests.samples;
 
+import config.MobileConfig;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,18 +15,21 @@ import java.net.URL;
 import java.util.List;
 
 public class AndroidBrowserStackSample {
+    public static MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
+    String user = mobileConfig.user();
+    String key = mobileConfig.key();
+    String url = mobileConfig.url();
 
     @Test
     void searchTest() throws MalformedURLException, InterruptedException {
-
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "qaguru_B5xciN");
-        caps.setCapability("browserstack.key", "TzFxj7ss7siMKTxUURLy");
+        caps.setCapability("browserstack.user", user);
+        caps.setCapability("browserstack.key", key);
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        caps.setCapability("app", url);
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
