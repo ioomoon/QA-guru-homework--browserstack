@@ -3,6 +3,7 @@ package tests;
 
 import io.appium.java_client.MobileBy;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.net.MalformedURLException;
@@ -18,6 +19,7 @@ public class AndroidTests extends TestBase {
 
     private WikiSteps steps = new WikiSteps();
 
+    @DisplayName("Тест на поиск 'BrowserStack'")
     @Test
     void searchTest() throws MalformedURLException, InterruptedException {
         steps.searchWikiClick();
@@ -25,6 +27,7 @@ public class AndroidTests extends TestBase {
         steps.assertResultsExist();
     }
 
+    @DisplayName("Тест на проверку языка")
     @Test
     void checkLanguage() throws MalformedURLException, InterruptedException {
         steps.searchWikiClick();
