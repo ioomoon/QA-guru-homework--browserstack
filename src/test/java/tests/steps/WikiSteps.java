@@ -9,22 +9,22 @@ import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.*;
 
 public class WikiSteps {
-    @Step("Click Search Wikipedia")
+    @Step("Нажать на поле поиска")
     public void searchWikiClick() {
         $(MobileBy.AccessibilityId("Search Wikipedia")).click();
     }
 
-    @Step("Send 'BrowserStack' for search")
+    @Step("Ввести значение 'BrowserStack'")
     public void sendKeysBrowserStack() {
         $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
     }
 
-    @Step("Assert that results exist")
+    @Step("Проверить отображение результатов поиска")
     public void assertResultsExist() {
         $$(byClassName("android.widget.LinearLayout")).shouldHave(sizeGreaterThan(0));
     }
 
-    @Step("Assert that language of search is English")
+    @Step("Проверить, что язык поиска - Английский")
     public void assertLanguageIsEN() {
         $$(byClassName("android.widget.TextView")).first().shouldHave(Condition.text("EN"));
     }
