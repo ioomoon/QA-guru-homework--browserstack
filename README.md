@@ -1,6 +1,6 @@
 ## <img src="https://github.com/ioomoon/QA-guru-homework-mobile/blob/master/img/icon2.png?raw=true" width="25">  Примеры UI автотестов для Android приложения Wikipedia
 
-<img src="https://github.com/ioomoon/QA-guru-homework-mobile/blob/master/img/wikipedia.jpg?raw=true" width="250">
+<img src="https://github.com/ioomoon/QA-guru-homework-mobile/blob/master/img/wikipedia.jpg?raw=true" width="500">
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon5.png?raw=true" width="25"> Автоматизированны тест-кейсы:
 - Отображение результатов поиска 'BrowserStack'
