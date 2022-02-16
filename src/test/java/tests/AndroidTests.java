@@ -43,6 +43,6 @@ public class AndroidTests extends TestBase {
         steps.searchWikiClick();
         steps.sendKeys("Java");
         steps.clickResult("Java");
-        steps.checkSubtitleTextContains("Indonesian island");
+        steps.checkSubtitleTextContains("Island in Southeast Asia");
     }
 }
