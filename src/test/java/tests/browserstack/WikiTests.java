@@ -1,4 +1,4 @@
-package tests;
+package tests.browserstack;
 
 
 import io.qameta.allure.Feature;
@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 
 import java.net.MalformedURLException;
 
+import tests.browserstack.steps.WikiSteps;
 
-import tests.steps.WikiSteps;
-
-public class AndroidTests extends TestBase {
+@DisplayName("Тестирование мобильного приложения Wikipedia с использованием BrowserStack")
+public class WikiTests extends TestBase {
 
     private WikiSteps steps = new WikiSteps();
 
@@ -33,16 +33,5 @@ public class AndroidTests extends TestBase {
         steps.searchWikiClick();
         steps.sendKeys("BrowserStack");
         steps.assertLanguageIsEN();
-    }
-
-    @Test
-    @DisplayName("Открытие страницы из результатов поиска")
-    @Feature("WikiSearch")
-    @Owner("m.lavrushina")
-    void openingPageFromSearchResultsTest() {
-        steps.searchWikiClick();
-        steps.sendKeys("Java");
-        steps.clickResult("Java");
-        steps.checkSubtitleTextContains("Island in Southeast Asia");
     }
 }

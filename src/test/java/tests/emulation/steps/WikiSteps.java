@@ -1,13 +1,13 @@
-package tests.steps;
+package tests.emulation.steps;
 
-import com.codeborne.selenide.Condition;
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class WikiSteps {
     @Step("Нажать на поле поиска")
@@ -22,7 +22,7 @@ public class WikiSteps {
 
     @Step("Проверить отображение результатов поиска")
     public void assertResultsExist() {
-        $$(byClassName("android.widget.LinearLayout")).shouldHave(sizeGreaterThan(0));
+        $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(sizeGreaterThan(0));
     }
 
     @Step("Проверить, что язык поиска - Английский")
@@ -30,14 +30,15 @@ public class WikiSteps {
         $$(byClassName("android.widget.TextView")).first().shouldHave(text("EN"));
     }
 
-    @Step("Нажать на результат поиска")
-    public void clickResult(String result){
-        $$(byClassName("android.widget.TextView")).find(text(result)).click();
+    @Step("Нажать 'Продолжить' или 'Начать' на последней странице о Википедии")
+    public void clickForwardButton() {
+        $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
     }
 
-    @Step("Проверить отображение подзаголовка на открывшейся странице")
-    public void checkSubtitleTextContains(String text){
-        $(MobileBy.id("org.wikipedia.alpha:id/view_page_subtitle_text")).shouldHave(text(text));
+    @Step("Проверить, что заголовок страницы содержит необходимый текст")
+    public void checkPrimaryText(String text) {
+        $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                .shouldHave(text(text));
     }
 
 }
