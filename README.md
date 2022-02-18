@@ -20,6 +20,7 @@
 ![](img/Github.png)
 ![](img/Jenkins.png)
 ![](img/Rest-Assured.png)
+<img src="https://github.com/ioomoon/QA-guru-homework-mobile/blob/master/img/androidstudio.png?raw=true" width="40">
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon6.png?raw=true" width="25"> Отчеты в Allure Report
 ![](img/allure1.png)
