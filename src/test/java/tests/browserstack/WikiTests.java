@@ -3,6 +3,8 @@ package tests.browserstack;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,20 +19,21 @@ public class WikiTests extends TestBase {
 
     private WikiSteps steps = new WikiSteps();
 
+    @Test
     @DisplayName("Тест на поиск 'BrowserStack'")
     @Feature("WikiSearch")
     @Owner("m.lavrushina")
-    @Test
+    @Severity(SeverityLevel.BLOCKER)
     void searchTest() throws MalformedURLException, InterruptedException {
         steps.searchWikiClick();
         steps.sendKeys("BrowserStack");
         steps.assertResultsExist();
     }
 
+    @Test
     @DisplayName("Тест на проверку языка поиска")
     @Feature("WikiSearch")
     @Owner("m.lavrushina")
-    @Test
     void checkLanguage() throws MalformedURLException, InterruptedException {
         steps.searchWikiClick();
         steps.sendKeys("BrowserStack");

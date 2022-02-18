@@ -29,3 +29,4 @@
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon1.png?raw=true" width="25"> Интеграция тестов c таск-трекер системой Jira
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon1.png?raw=true" width="25"> Telegram-уведомления о прохождении тестов
+![](img/notification.png)

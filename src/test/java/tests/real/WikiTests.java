@@ -3,6 +3,8 @@ package tests.real;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -22,6 +24,7 @@ public class WikiTests extends TestBase {
     @DisplayName("Проверка текста начальных страниц")
     @Feature("AboutWikiPage")
     @Owner("m.lavrushina")
+    @Severity(SeverityLevel.BLOCKER)
     void aboutWikiPageTest() {
         steps.checkPrimaryText("The Free Encyclopedia …in over 300 languages");
         steps.clickForwardButton();
@@ -32,10 +35,10 @@ public class WikiTests extends TestBase {
         steps.checkPrimaryText("Send anonymous data");
     }
 
+    @Test
     @DisplayName("Тест на поиск 'BrowserStack'")
     @Feature("WikiSearch")
     @Owner("m.lavrushina")
-    @Test
     void searchTest() throws MalformedURLException, InterruptedException {
         back();
         steps.searchWikiClick();
