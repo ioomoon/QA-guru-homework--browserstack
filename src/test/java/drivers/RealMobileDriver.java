@@ -1,7 +1,8 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.MobileConfig;
+import config.BrowserstackConfig;
+import config.RealConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +16,7 @@ import static utils.FileUtils.getAbsolutePath;
 
 public class RealMobileDriver implements WebDriverProvider {
 
-    public static MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
+    public static RealConfig realConfig = ConfigFactory.create(RealConfig.class);
 
     public static URL getLocalHostUrl() {
         try {
@@ -29,14 +30,14 @@ public class RealMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", "11141JECB02597");
-        desiredCapabilities.setCapability("version", "11.0");
+        desiredCapabilities.setCapability("deviceName", realConfig.deviceName());
+        desiredCapabilities.setCapability("version", realConfig.version());
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
         desiredCapabilities.setCapability("appPackage", "org.wikipedia.alpha");
         desiredCapabilities.setCapability("appActivity", "org.wikipedia.main.MainActivity");
         desiredCapabilities.setCapability("app",
-                getAbsolutePath("src/test/resources/apk/app-alpha-universal-release.apk"));
+                getAbsolutePath(realConfig.appPath()));
 
         return new AndroidDriver(getLocalHostUrl(), desiredCapabilities);
     }

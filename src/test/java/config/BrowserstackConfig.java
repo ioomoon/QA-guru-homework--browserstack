@@ -2,10 +2,10 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:MobileConfig.properties"
+        "classpath:BrowserstackConfig.properties"
 })
 
-public interface MobileConfig extends Config {
+public interface BrowserstackConfig extends Config {
     @Key("user")
     String user();
 

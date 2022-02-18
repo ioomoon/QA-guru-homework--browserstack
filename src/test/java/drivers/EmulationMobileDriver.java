@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.MobileConfig;
+import config.EmulationConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ import static utils.FileUtils.getAbsolutePath;
 
 public class EmulationMobileDriver implements WebDriverProvider {
 
-    public static MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
+    public static EmulationConfig emulationConfig = ConfigFactory.create(EmulationConfig.class);
 
     public static URL getLocalHostUrl() {
         try {
@@ -29,14 +29,14 @@ public class EmulationMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", "Pixel 5 API 32");
-        desiredCapabilities.setCapability("version", "11.0");
+        desiredCapabilities.setCapability("deviceName", emulationConfig.deviceName());
+        desiredCapabilities.setCapability("version", emulationConfig.version());
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
         desiredCapabilities.setCapability("appPackage", "org.wikipedia.alpha");
         desiredCapabilities.setCapability("appActivity", "org.wikipedia.main.MainActivity");
         desiredCapabilities.setCapability("app",
-                getAbsolutePath("src/test/resources/apk/app-alpha-universal-release.apk"));
+                getAbsolutePath(emulationConfig.appPath()));
 
         return new AndroidDriver(getLocalHostUrl(), desiredCapabilities);
     }

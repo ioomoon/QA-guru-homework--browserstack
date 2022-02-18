@@ -32,10 +32,9 @@ public class TestBase {
 
     @AfterEach
     public void afterEach(){
-        String sessionId = Attach.getSessionId();
         Attach.screenshotAs("LastScreenshot");
         Attach.pageSource();
         closeWebDriver();
-        Attach.attachVideo(sessionId);
+        Attach.attachVideo();
     }
 }
