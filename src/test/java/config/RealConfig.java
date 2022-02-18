@@ -2,7 +2,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:RealConfig.properties"
+        "classpath:real_config.properties"
 })
 
 public interface RealConfig extends Config {

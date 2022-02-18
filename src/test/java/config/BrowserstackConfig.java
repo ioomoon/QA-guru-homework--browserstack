@@ -2,7 +2,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:BrowserstackConfig.properties"
+        "classpath:browserstack_config.properties"
 })
 
 public interface BrowserstackConfig extends Config {

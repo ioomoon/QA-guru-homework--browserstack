@@ -14,17 +14,17 @@ import java.net.URL;
 
 public class BrowserStackMobileDriver implements WebDriverProvider {
 
-    public static BrowserstackConfig browserstackConfigConfig = ConfigFactory.create(BrowserstackConfig.class);
+    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
 
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         // Set your access credentials
-        desiredCapabilities.setCapability("browserstack.user", browserstackConfigConfig.user());
-        desiredCapabilities.setCapability("browserstack.key", browserstackConfigConfig.key());
+        desiredCapabilities.setCapability("browserstack.user", browserstackConfig.user());
+        desiredCapabilities.setCapability("browserstack.key", browserstackConfig.key());
 
         // Set URL of the application under test
-        desiredCapabilities.setCapability("app", browserstackConfigConfig.url());
+        desiredCapabilities.setCapability("app", browserstackConfig.url());
 
         // Specify device and os_version for testing
         desiredCapabilities.setCapability("device", "Google Pixel 3");

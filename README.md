@@ -5,6 +5,7 @@
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon5.png?raw=true" width="25"> Автоматизированны тест-кейсы:
 - Отображение результатов поиска 'BrowserStack'
 - Поиск осуществляется на английском языке 
+- Проверка текста начальных страниц (для запуска на эмуляторе или реальном устройстве)
 
 ### Стек технологий:
 ![](img/Intelij_IDEA.png)
@@ -21,6 +22,25 @@
 ![](img/Jenkins.png)
 ![](img/Rest-Assured.png)
 <img src="https://github.com/ioomoon/QA-guru-homework-mobile/blob/master/img/androidstudio.png?raw=true" width="40">
+
+## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon4.png?raw=true" width="25"> Запуск проекта:
+- для запуска проектов локально необходимо создать файлы: browserstack_config.properties, emulation_config.properties, real_config.properties и определить в них параметры конфигурации
+
+Локально для запуска всех тестов:
+```bash
+gradle clean test
+```
+Локально для запуска тестов только на browserstack/на эмуляторе/на реальном устройстве:
+```bash
+gradle clean browserstack / emulation / real
+```
+
+- для удаленного запуска воспользуйтесь [Jenkins](https://jenkins.autotests.cloud/job/009-ioomoon-unit20/):
+
+> Вы можете запускать тесты, настроив следующие параметры:
+>> * ENVIRONMENT (default TEST)
+>> * COMMENT (комментарий для уведомления в telegram)
+
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon6.png?raw=true" width="25"> Отчеты в Allure Report
 ![](img/allure1.png)
