@@ -4,8 +4,9 @@ package tests.emulation;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.emulation.steps.WikiSteps;
+import tests.steps.WikiSteps;
 
 import java.net.MalformedURLException;
 
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.back;
 
 @DisplayName("Тестирование мобильного приложения Wikipedia на эмуляторе")
+@Tag("emulation")
 public class WikiTests extends TestBase {
 
     private WikiSteps steps = new WikiSteps();

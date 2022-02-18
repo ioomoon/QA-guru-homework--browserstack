@@ -1,4 +1,4 @@
-package tests.emulation.steps;
+package tests.steps;
 
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
