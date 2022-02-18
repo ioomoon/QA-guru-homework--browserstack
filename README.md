@@ -22,11 +22,16 @@
 ![](img/Rest-Assured.png)
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon6.png?raw=true" width="25"> Отчеты в Allure Report
-
+![](img/allure1.png)
+![](img/allure2.png)
+![](img/allure3.png)
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon6.png?raw=true" width="25"> Интеграция тестов c тест-менеджмент системой Allure TestOps
+![](img/allure_testOps.png)
+![](img/allure_testOps2.png)
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon1.png?raw=true" width="25"> Интеграция тестов c таск-трекер системой Jira
+![](img/jira.png)
 
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon1.png?raw=true" width="25"> Telegram-уведомления о прохождении тестов
 ![](img/notification.png)
