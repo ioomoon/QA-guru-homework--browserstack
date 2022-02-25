@@ -41,7 +41,6 @@ gradle clean browserstack / emulation / real
 >> * ENVIRONMENT (default TEST)
 >> * COMMENT (комментарий для уведомления в telegram)
 
-
 ## <img src="https://github.com/ioomoon/QA-guru-graduation/blob/master/img/icon6.png?raw=true" width="25"> Отчеты в Allure Report
 ![](img/allure1.png)
 ![](img/allure2.png)
